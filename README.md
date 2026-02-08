@@ -7,11 +7,11 @@ NPO法人くりあーの公式サイトを想定した、GitHub Pages向けの�
 
 - Hero
 - 目的別導線（事業内容 / 団体紹介 / 参加支援 / 活動報告）
-- 事業サマリー（療育支援・啓発/社会教育・相談支援・地域食堂/交流）
+- 事業サマリー（定款第5条をベースに要約）
 - 団体について（理念・設立趣旨・団体概要）
 - 活動報告・お知らせ
 - 参加・支援する
-- 情報公開（Transparency）
+- 情報公開（Transparency: 定款要点、会員制度、役員体制、設立趣旨）
 - お問い合わせ
 
 ## ファイル構成
@@ -19,6 +19,8 @@ NPO法人くりあーの公式サイトを想定した、GitHub Pages向けの�
 - `index.html`
 - `assets/style.css`
 - `assets/app.js`
+- `docs/teikan.md`（定款掲載版）
+- `docs/setsuritsu-shushi.md`（設立趣旨書要約）
 
 ## GitHub Pages 公開手順
 
