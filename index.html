@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Company | Corporate Site</title>
+    <meta name="description" content="Sample Companyの公式サイト。サービス紹介やお知らせをご覧いただけます。" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#hero" class="logo">Sample Company</a>
+        <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false">Menu</button>
+        <nav id="site-nav" class="site-nav" aria-label="メインナビゲーション">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero section">
+        <div class="container hero-inner">
+          <p class="kicker">Welcome to</p>
+          <h1>課題解決を、もっとシンプルに。</h1>
+          <p>
+            私たちは、Web制作とプロダクト開発を通じて、
+            ビジネスの成長を支援するパートナーです。
+          </p>
+          <a class="btn" href="#contact">お問い合わせ</a>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2>About</h2>
+          <p>
+            Sample Companyは、企画・設計・実装・運用までを一貫して提供する開発チームです。
+            ユーザー体験と成果の両立を目指し、最適なソリューションを提案します。
+          </p>
+        </div>
+      </section>
+
+      <section id="services" class="section alt">
+        <div class="container">
+          <h2>Services</h2>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Webサイト制作</h3>
+              <p>ブランドと目的に合わせた高品質なコーポレート/採用サイトを構築します。</p>
+            </article>
+            <article class="card">
+              <h3>アプリ開発</h3>
+              <p>要件定義から開発・保守まで、スピードと拡張性を重視して実装します。</p>
+            </article>
+            <article class="card">
+              <h3>運用改善</h3>
+              <p>アクセス解析と改善サイクルを通じて、継続的に成果を最大化します。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="section">
+        <div class="container">
+          <h2>News</h2>
+          <ul class="news-list">
+            <li><time datetime="2026-02-01">2026.02.01</time><span>新サービス「Insight Board」をリリースしました。</span></li>
+            <li><time datetime="2026-01-15">2026.01.15</time><span>コーポレートサイトをリニューアルしました。</span></li>
+            <li><time datetime="2025-12-20">2025.12.20</time><span>年末年始休業のお知らせを掲載しました。</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section alt">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>ご相談・ご依頼は以下のフォームよりお気軽にお問い合わせください。</p>
+          <a class="btn" href="https://example.com/form" target="_blank" rel="noopener noreferrer">外部フォームへ</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; 2026 Sample Company. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
