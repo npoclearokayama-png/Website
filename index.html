@@ -3,92 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sample Company | Corporate Site</title>
-    <meta name="description" content="Sample Companyの公式サイト。サービス紹介やお知らせをご覧いただけます。" />
+    <title>NPO法人くりあー | 地域で暮らし続けるための確かな支援</title>
+    <meta
+      name="description"
+      content="NPO法人くりあーは、自閉症児・者とその家族を中心に、療育支援・啓発・相談支援・地域交流を通じて地域全体を支えます。"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+
     <header class="site-header">
       <div class="container nav-wrap">
-        <a href="#hero" class="logo">Sample Company</a>
-        <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false">Menu</button>
+        <a href="#top" class="logo">NPO法人くりあー</a>
+        <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false">メニュー</button>
         <nav id="site-nav" class="site-nav" aria-label="メインナビゲーション">
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">団体について</a></li>
+            <li><a href="#programs">事業紹介</a></li>
+            <li><a href="#news">活動報告</a></li>
+            <li><a href="#support">参加・支援</a></li>
+            <li><a href="#transparency">情報公開</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section id="hero" class="hero section">
+    <main id="main">
+      <section id="top" class="hero section">
         <div class="container hero-inner">
-          <p class="kicker">Welcome to</p>
-          <h1>課題解決を、もっとシンプルに。</h1>
-          <p>
-            私たちは、Web制作とプロダクト開発を通じて、
-            ビジネスの成長を支援するパートナーです。
+          <p class="eyebrow">地域福祉・発達支援</p>
+          <h1>地域で暮らし続けるための、確かな支援を。</h1>
+          <p class="lead">
+            自閉症児・者とその家族を中心に、地域全体を支えるNPO法人くりあー。<br />
+            一人ひとりの暮らしに寄り添い、支援の選択肢を増やしていきます。
           </p>
-          <a class="btn" href="#contact">お問い合わせ</a>
+          <div class="cta-group">
+            <a class="btn" href="#programs">事業内容を見る</a>
+            <a class="btn btn-secondary" href="#support">参加・支援する</a>
+          </div>
         </div>
       </section>
 
-      <section id="about" class="section">
+      <section id="entry" class="section">
         <div class="container">
-          <h2>About</h2>
-          <p>
-            Sample Companyは、企画・設計・実装・運用までを一貫して提供する開発チームです。
-            ユーザー体験と成果の両立を目指し、最適なソリューションを提案します。
-          </p>
+          <h2>目的別に見る</h2>
+          <div class="card-grid quick-links">
+            <a class="card link-card" href="#programs">
+              <h3>事業内容を見る</h3>
+              <p>療育支援・啓発・相談支援・地域食堂の取り組みを紹介します。</p>
+            </a>
+            <a class="card link-card" href="#about">
+              <h3>団体について知る</h3>
+              <p>理念、設立趣旨、団体概要、代表メッセージを掲載しています。</p>
+            </a>
+            <a class="card link-card" href="#support">
+              <h3>参加・支援する</h3>
+              <p>会員、ボランティア、寄付など関わり方に応じた導線を案内します。</p>
+            </a>
+            <a class="card link-card" href="#news">
+              <h3>お知らせ・活動報告</h3>
+              <p>継続的な活動が分かるよう、最新の取り組みを掲載しています。</p>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section id="services" class="section alt">
+      <section id="programs" class="section alt">
         <div class="container">
-          <h2>Services</h2>
+          <h2>事業サマリー</h2>
           <div class="card-grid">
             <article class="card">
-              <h3>Webサイト制作</h3>
-              <p>ブランドと目的に合わせた高品質なコーポレート/採用サイトを構築します。</p>
+              <h3>療育支援事業</h3>
+              <p>発達特性に配慮した個別・小集団支援で、生活と学びの基盤づくりを行います。</p>
             </article>
             <article class="card">
-              <h3>アプリ開発</h3>
-              <p>要件定義から開発・保守まで、スピードと拡張性を重視して実装します。</p>
+              <h3>啓発・社会教育事業</h3>
+              <p>講演や研修を通じて、地域全体の理解促進と関係者の実践力向上を図ります。</p>
             </article>
             <article class="card">
-              <h3>運用改善</h3>
-              <p>アクセス解析と改善サイクルを通じて、継続的に成果を最大化します。</p>
+              <h3>相談支援事業</h3>
+              <p>当事者・保護者からの相談に対し、制度活用や生活課題の整理を伴走支援します。</p>
+            </article>
+            <article class="card">
+              <h3>地域食堂・地域交流事業</h3>
+              <p>多様な人がつながる場をつくり、孤立を防ぐ地域コミュニティを育てます。</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="news" class="section">
+      <section id="about" class="section">
+        <div class="container two-col">
+          <div>
+            <h2>団体について</h2>
+            <p>
+              NPO法人くりあーは、地域で暮らし続けたいという当事者・家族の願いを起点に設立されました。
+              社会課題を「個人の困りごと」に矮小化せず、地域の仕組みとして解決することを目指しています。
+            </p>
+            <h3>理念・設立趣旨</h3>
+            <p>
+              だれもが尊厳を持って暮らせる地域社会を実現するため、必要な支援を切れ目なく提供し、
+              支援する側・される側を固定しない関係づくりを進めます。
+            </p>
+          </div>
+          <aside class="panel">
+            <h3>団体概要</h3>
+            <dl>
+              <dt>法人名</dt><dd>NPO法人くりあー</dd>
+              <dt>所在地</dt><dd>東京都◯◯区◯◯ 1-2-3</dd>
+              <dt>設立</dt><dd>2022年4月</dd>
+              <dt>対象</dt><dd>自閉症児・者とその家族、地域住民</dd>
+            </dl>
+            <p class="panel-note">代表メッセージや詳細沿革は今後このセクションで拡充予定です。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="news" class="section alt">
         <div class="container">
-          <h2>News</h2>
+          <h2>活動報告・お知らせ</h2>
           <ul class="news-list">
-            <li><time datetime="2026-02-01">2026.02.01</time><span>新サービス「Insight Board」をリリースしました。</span></li>
-            <li><time datetime="2026-01-15">2026.01.15</time><span>コーポレートサイトをリニューアルしました。</span></li>
-            <li><time datetime="2025-12-20">2025.12.20</time><span>年末年始休業のお知らせを掲載しました。</span></li>
+            <li><time datetime="2026-02-08">2026.02.08</time><span>地域食堂の開催報告を公開しました。</span></li>
+            <li><time datetime="2026-01-28">2026.01.28</time><span>療育支援プログラム説明会（2月開催）の募集を開始しました。</span></li>
+            <li><time datetime="2025-12-26">2025.12.26</time><span>2025年度の活動サマリーを掲載しました。</span></li>
+          </ul>
+          <p class="note">年度別アーカイブは順次追加予定です。</p>
+        </div>
+      </section>
+
+      <section id="support" class="section">
+        <div class="container">
+          <h2>参加・支援する</h2>
+          <div class="card-grid">
+            <article class="card">
+              <h3>会員になる</h3>
+              <p>正会員・賛助会員として、活動の継続を制度的に支えていただけます。</p>
+            </article>
+            <article class="card">
+              <h3>ボランティア参加</h3>
+              <p>イベント運営や地域食堂など、現場での実践に参加できます。</p>
+            </article>
+            <article class="card">
+              <h3>寄付する</h3>
+              <p>単発・継続寄付を選べます。使途は情報公開ページで定期的に報告します。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="transparency" class="section alt">
+        <div class="container">
+          <h2>情報公開（Transparency）</h2>
+          <p>説明責任を重視し、法人運営・事業・財務情報を継続的に公開します。</p>
+          <ul class="document-list">
+            <li><a href="#" aria-disabled="true">定款（準備中）</a></li>
+            <li><a href="#" aria-disabled="true">役員名簿（準備中）</a></li>
+            <li><a href="#" aria-disabled="true">事業計画書（準備中）</a></li>
+            <li><a href="#" aria-disabled="true">活動報告書（準備中）</a></li>
+            <li><a href="#" aria-disabled="true">財務情報（概要・PDF、準備中）</a></li>
           </ul>
         </div>
       </section>
 
-      <section id="contact" class="section alt">
+      <section id="contact" class="section">
         <div class="container">
-          <h2>Contact</h2>
-          <p>ご相談・ご依頼は以下のフォームよりお気軽にお問い合わせください。</p>
-          <a class="btn" href="https://example.com/form" target="_blank" rel="noopener noreferrer">外部フォームへ</a>
+          <h2>お問い合わせ</h2>
+          <p>相談・参加・講演依頼などは、以下の外部フォームからご連絡ください。</p>
+          <a class="btn" href="https://example.com/form" target="_blank" rel="noopener noreferrer">お問い合わせフォーム（ダミー）</a>
+          <p class="contact-meta">メール: info@example.org / 事務所: 東京都◯◯区◯◯ 1-2-3</p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <small>&copy; 2026 Sample Company. All rights reserved.</small>
+      <div class="container footer-inner">
+        <small>&copy; 2026 NPO法人くりあー</small>
+        <a href="#transparency">透明性方針</a>
       </div>
     </footer>
 
