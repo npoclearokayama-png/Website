@@ -1,367 +1,1011 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NPO法人くりあー | 地域で暮らし続けるための確かな支援</title>
-    <meta
-      name="description"
-      content="NPO法人くりあーは、自閉症児・者とその家族を中心に、療育支援・啓発・相談支援・地域交流を通じて地域全体を支えます。最新情報はSNSで発信しています。"
-    />
-    <style>
-      :root {
-        --bg: #f4f7fb;
-        --surface: #ffffff;
-        --text: #1f2937;
-        --muted: #4b5563;
-        --primary: #2157a5;
-        --primary-dark: #1a4685;
-        --border: #dbe2ea;
-        --focus: #0f766e;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NPO法人くりあー | ここにいていい時間を、地域の中に</title>
+  <meta
+    name="description"
+    content="NPO法人くりあーは、人と人がゆるやかにつながり、『ここにいていい』と思える時間や場を地域の中に少しずつ増やしていく活動をしています。"
+  />
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --bg-2: #fbf8f4;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-strong: rgba(255, 255, 255, 0.9);
+      --text: #22201d;
+      --muted: #6b655e;
+      --line: rgba(34, 32, 29, 0.08);
+      --accent: #b57a52;
+      --accent-soft: #e8d7c8;
+      --green: #81917a;
+      --shadow: 0 24px 60px rgba(45, 36, 28, 0.10);
+      --radius-xl: 36px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(181, 122, 82, 0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(129, 145, 122, 0.10), transparent 28%),
+        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+      font-family:
+        "Inter",
+        "Hiragino Sans",
+        "Yu Gothic",
+        "Noto Sans JP",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(251, 248, 244, 0.68);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .nav-wrap {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .logo-main {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: var(--surface-strong);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(34, 32, 29, 0.08);
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .site-nav a {
+      font-size: 0.94rem;
+      color: var(--muted);
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+
+    .site-nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 88px 0 58px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin: 0 0 18px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(34, 32, 29, 0.06);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .hero h1 {
+      margin: 0 0 20px;
+      font-size: clamp(2.6rem, 5.6vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .hero-lead {
+      margin: 0;
+      max-width: 42rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #b57a52, #9f6c49);
+      box-shadow: 0 16px 36px rgba(181, 122, 82, 0.25);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(34,32,29,0.08);
+      box-shadow: 0 12px 28px rgba(34,32,29,0.06);
+    }
+
+    .hero-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.8);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel {
+      position: absolute;
+      inset: 28px 24px 28px 24px;
+      padding: 30px;
+      border-radius: 40px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.58)),
+        linear-gradient(220deg, rgba(232,215,200,0.55), rgba(255,255,255,0.1));
+      border: 1px solid rgba(255,255,255,0.85);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel-inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-panel-copy h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      line-height: 1.3;
+    }
+
+    .hero-panel-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .quote-box {
+      margin-top: 26px;
+      padding: 20px 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(34,32,29,0.06);
+    }
+
+    .quote-box strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .quote-box p {
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 16px 18px;
+      border-radius: 22px;
+      min-width: 190px;
+    }
+
+    .floating-card span {
+      display: inline-block;
+      margin-bottom: 6px;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .floating-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .floating-1 { top: 0; right: 0; }
+    .floating-2 { left: -2px; bottom: 24px; }
+    .floating-3 { right: 10px; bottom: -8px; }
+
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-header {
+      margin-bottom: 26px;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(1.95rem, 4vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+    }
+
+    .section-intro {
+      margin: 12px 0 0;
+      max-width: 45rem;
+      color: var(--muted);
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(255,255,255,0.86);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      padding: 36px;
+    }
+
+    .about-copy p {
+      margin: 0 0 16px;
+      color: #575149;
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-side {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(34,32,29,0.06);
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .concept-grid,
+    .activity-grid,
+    .sns-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .concept-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .activity-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .sns-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      position: relative;
+      padding: 26px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(255,255,255,0.88);
+      box-shadow: 0 16px 36px rgba(34,32,29,0.07);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #b57a52, #d7b899, #81917a);
+      opacity: 0.95;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+      line-height: 1.45;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card-meta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      height: 30px;
+      margin-bottom: 14px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(181, 122, 82, 0.10);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .sns-wrap {
+      display: grid;
+      grid-template-columns: 1fr 290px;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .sns-card .sns-meta {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .sns-card .sns-link {
+      display: inline-flex;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .sns-aside {
+      padding: 24px;
+    }
+
+    .sns-aside h3 {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+    }
+
+    .sns-aside p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .sns-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .sns-list li {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(34,32,29,0.06);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .cta-box {
+      padding: 38px;
+      border-radius: 40px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.62)),
+        linear-gradient(220deg, rgba(232,215,200,0.55), rgba(255,255,255,0.08));
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .cta-box p {
+      max-width: 42rem;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .site-footer {
+      padding: 30px 0 44px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner a {
+      font-weight: 700;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-panel,
+      .sns-wrap {
+        grid-template-columns: 1fr;
       }
 
-      * {
-        box-sizing: border-box;
+      .concept-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      html {
-        scroll-behavior: smooth;
+      .activity-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      body {
-        margin: 0;
-        font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-        color: var(--text);
-        background: var(--bg);
-        line-height: 1.75;
+      .hero-visual {
+        min-height: 470px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-toggle {
+        display: inline-flex;
       }
 
-      a {
-        color: inherit;
-      }
-
-      .skip-link {
+      .site-nav {
         position: absolute;
-        left: -999px;
-        top: 0;
-        background: #fff;
-        border: 2px solid var(--focus);
-        padding: 0.5rem 0.75rem;
+        top: calc(100% + 8px);
+        left: 16px;
+        right: 16px;
+        display: none;
+        padding: 14px;
+        background: rgba(255,255,255,0.95);
+        border: 1px solid rgba(34,32,29,0.08);
+        border-radius: 22px;
+        box-shadow: 0 20px 40px rgba(34,32,29,0.12);
       }
 
-      .skip-link:focus {
-        left: 0.75rem;
-        top: 0.75rem;
-        z-index: 50;
-      }
-
-      .container {
-        width: min(1120px, 92%);
-        margin: 0 auto;
-      }
-
-      .section {
-        padding: 4.8rem 0;
-        scroll-margin-top: 80px;
-      }
-
-      .section h2 {
-        margin: 0 0 1.1rem;
-        font-size: clamp(1.45rem, 2.4vw, 2rem);
-      }
-
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        background: rgba(255, 255, 255, 0.95);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(6px);
-      }
-
-      .nav-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 68px;
-        gap: 1rem;
-      }
-
-      .logo {
-        text-decoration: none;
-        font-weight: 700;
+      .site-nav.open {
+        display: block;
       }
 
       .site-nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 0.7rem;
-      }
-
-      .site-nav a {
-        text-decoration: none;
-        color: var(--muted);
-        font-weight: 600;
-        padding: 0.2rem 0.35rem;
-        border-radius: 0.35rem;
-      }
-
-      .site-nav a:hover,
-      .site-nav a:focus-visible {
-        color: var(--primary);
-        background: #eef4fb;
-      }
-
-      .menu-toggle {
-        display: none;
-        border: 1px solid var(--border);
-        background: var(--surface);
-        border-radius: 0.45rem;
-        padding: 0.45rem 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
       }
 
       .hero {
-        background: linear-gradient(180deg, #eaf0f9 0%, #f4f7fb 70%);
-        padding-top: 6.2rem;
+        padding-top: 44px;
       }
 
-      .hero-inner {
-        max-width: 860px;
+      .hero h1 {
+        font-size: 2.7rem;
       }
 
-      .eyebrow {
-        margin: 0;
-        color: var(--primary);
-        font-weight: 700;
+      .hero-visual {
+        min-height: 380px;
       }
 
-      h1 {
-        margin: 0.55rem 0 1rem;
-        font-size: clamp(2rem, 5vw, 3rem);
-        line-height: 1.3;
+      .hero-panel {
+        inset: 22px 8px 30px 8px;
+        padding: 22px;
       }
 
-      .lead {
-        color: var(--muted);
-        margin: 0;
+      .section {
+        padding: 40px 0;
       }
 
-      .btn {
-        display: inline-block;
-        text-decoration: none;
-        background: var(--primary);
-        color: #fff;
-        padding: 0.72rem 1.1rem;
-        border-radius: 0.55rem;
-        font-weight: 700;
+      .about-panel,
+      .cta-box {
+        padding: 24px;
       }
 
-      .btn:hover,
-      .btn:focus-visible {
-        background: var(--primary-dark);
-      }
-
-      .btn-secondary {
-        background: #fff;
-        color: var(--primary);
-        border: 1px solid #9bb6db;
-      }
-
-      .button-grid {
-        margin-top: 1.2rem;
-        display: grid;
-        gap: 0.75rem;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .simple-grid {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .card {
-        border: 1px solid var(--border);
-        background: #fff;
-        border-radius: 0.9rem;
-        padding: 1.1rem;
-      }
-
-      .card h3 {
-        margin: 0 0 0.55rem;
-      }
-
-      .note,
-      .contact-meta {
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .section-actions {
-        margin-top: 1.2rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-      }
-
-      .site-footer {
-        background: #fff;
-        border-top: 1px solid var(--border);
+      .concept-grid,
+      .activity-grid,
+      .sns-grid {
+        grid-template-columns: 1fr;
       }
 
       .footer-inner {
-        min-height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
       }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#top" class="logo" aria-label="NPO法人くりあー トップへ戻る">
+        <span class="logo-main">NPO法人くりあー</span>
+        <span class="logo-sub">community / connection / place</span>
+      </a>
 
-      @media (max-width: 920px) {
-        .simple-grid {
-          grid-template-columns: 1fr;
-        }
+      <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false">
+        メニュー
+      </button>
 
-        .button-grid {
-          grid-template-columns: 1fr;
-        }
-      }
+      <nav id="site-nav" class="site-nav" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="#about">私たちについて</a></li>
+          <li><a href="#concept">大切にしていること</a></li>
+          <li><a href="#activities">活動</a></li>
+          <li><a href="#sns">SNS</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      @media (max-width: 760px) {
-        .menu-toggle {
-          display: inline-block;
-        }
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">A place to belong</p>
+            <h1>ここにいていい時間を、<br>地域の中に。</h1>
+            <p class="hero-lead">
+              NPO法人くりあーは、
+              人と人がゆるやかにつながり、
+              それぞれのままでいられる時間や場を、
+              地域の中に少しずつ増やしていくことを目指しています。
+            </p>
 
-        .nav-wrap {
-          flex-wrap: wrap;
-          padding: 0.7rem 0;
-        }
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://example.com/sns" target="_blank" rel="noopener noreferrer">
+                SNSを見る
+              </a>
+              <a class="btn btn-secondary" href="https://forms.gle/example-contact-form" target="_blank" rel="noopener noreferrer">
+                お問い合わせ
+              </a>
+            </div>
 
-        .site-nav {
-          display: none;
-          width: 100%;
-        }
+            <p class="hero-note">
+              活動報告・お知らせ・近況はSNSで発信しています。
+            </p>
+          </div>
 
-        .site-nav.open {
-          display: block;
-        }
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-panel">
+              <div class="hero-panel-inner">
+                <div class="hero-panel-copy">
+                  <h2>特別な場所ではなく、<br>自然に立ち寄れる場所を。</h2>
+                  <p>
+                    誰かのためだけの閉じた場ではなく、
+                    それぞれのペースで関われる、
+                    開かれた地域の空気を育てていきたいと考えています。
+                  </p>
+                </div>
 
-        .site-nav ul {
-          flex-direction: column;
-          padding: 0.45rem 0;
-        }
+                <div class="quote-box">
+                  <strong>Our message</strong>
+                  <p>
+                    がんばりすぎなくても、説明しすぎなくても、
+                    そのままでいられる時間があること。
+                    私たちは、そんな場を大切にしています。
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        .section {
-          padding: 4rem 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">本文へスキップ</a>
+            <div class="floating-card glass floating-1">
+              <span>Connection</span>
+              <p>人と人が、無理なくつながる</p>
+            </div>
 
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a href="#top" class="logo">NPO法人くりあー</a>
-        <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false">メニュー</button>
-        <nav id="site-nav" class="site-nav" aria-label="メインナビゲーション">
-          <ul>
-            <li><a href="#about">団体紹介</a></li>
-            <li><a href="#links">リンク集</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+            <div class="floating-card glass floating-2">
+              <span>Place</span>
+              <p>ふらっと立ち寄れる居場所をつくる</p>
+            </div>
 
-    <main id="main">
-      <section id="top" class="hero section">
-        <div class="container hero-inner">
-          <p class="eyebrow">地域福祉・発達支援</p>
-          <h1>地域で暮らし続けるための、確かな支援を。</h1>
-          <p class="lead">
-            このトップページは概要のみを掲載し、最新の活動はSNSで発信しています。
-            詳細資料はGoogleドライブ、各種連絡はGoogleフォームをご利用ください。
-          </p>
-          <div class="section-actions">
-            <a class="btn" href="https://example.com/sns" target="_blank" rel="noopener noreferrer">活動報告（SNS）を見る</a>
-            <a class="btn btn-secondary" href="https://forms.gle/example-contact-form" target="_blank" rel="noopener noreferrer">お問い合わせフォーム</a>
+            <div class="floating-card glass floating-3">
+              <span>Community</span>
+              <p>地域のあたたかさを育てる</p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="about" class="section">
-        <div class="container simple-grid">
-          <article class="card">
-            <h3>団体について</h3>
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">About</span>
+          <h2>私たちについて</h2>
+          <p class="section-intro">
+            人が孤立しにくい地域には、制度や仕組みだけではなく、自然につながれる空気が必要だと考えています。
+          </p>
+        </div>
+
+        <div class="about-panel panel">
+          <div class="about-copy">
             <p>
-              NPO法人くりあーは、自閉症児・者とその家族を中心に、
-              療育支援・啓発・相談支援・地域交流を通じて地域全体を支えます。
+              NPO法人くりあーは、
+              人と人とのつながりが少しずつ育っていく地域を目指して活動しています。
+            </p>
+            <p>
+              目指しているのは、
+              立場や役割に関係なく、
+              誰かが「ここにいていい」と感じられる時間や関係が
+              日常の中に増えていくことです。
+            </p>
+            <p>
+              大きなことを一度に変えるのではなく、
+              小さな場づくりや関わりを積み重ねながら、
+              地域の空気そのものを少しずつやわらかくしていきたいと考えています。
+            </p>
+            <p>
+              岡山県赤磐市を拠点に、
+              人が集い、学び、関わり合える機会を育てていきます。
+            </p>
+          </div>
+
+          <div class="about-side">
+            <div class="mini-card">
+              <strong>拠点</strong>
+              <span>岡山県赤磐市</span>
+            </div>
+            <div class="mini-card">
+              <strong>キーワード</strong>
+              <span>居場所 / 交流 / 学び / 地域</span>
+            </div>
+            <div class="mini-card">
+              <strong>スタンス</strong>
+              <span>無理のない関わりと、開かれた場づくり</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="concept" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Concept</span>
+          <h2>大切にしていること</h2>
+          <p class="section-intro">
+            活動の内容より先に、どんな空気をつくりたいのかを大事にしています。
+          </p>
+        </div>
+
+        <div class="concept-grid">
+          <article class="card">
+            <h3>関わり方を、ひとつに決めつけない</h3>
+            <p>
+              積極的に関わる人も、少し離れたところから見守る人もいていい。
+              それぞれに合った距離感を尊重します。
             </p>
           </article>
+
           <article class="card">
-            <h3>主な事業</h3>
-            <p>療育支援 / 啓発・社会教育 / 相談支援 / 地域食堂・地域交流</p>
-            <p class="note">事業の詳細は事業報告・料をご確認ください。</p>
+            <h3>開かれた場をつくる</h3>
+            <p>
+              特定の人だけの場所ではなく、
+              地域の中で自然に立ち寄れる、
+              やわらかなつながりのある場を目指します。
+            </p>
           </article>
+
           <article class="card">
-            <h3>所在地</h3>
-            <p>岡山県赤磐市</p>
-            <p class="note">設立: 令和7年（2025年）設立手続</p>
+            <h3>学びを地域の力に変えていく</h3>
+            <p>
+              学ぶことを個人だけで終わらせず、
+              人と人の関わりや地域の実践に少しずつ還元していきます。
+            </p>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="links" class="section">
-        <div class="container">
-          <h2>外部リンク</h2>
-          <p class="note">活動報告・資料公開・問い合わせは以下の外部サービスへ集約しています。</p>
-          <div class="button-grid">
-            <a class="btn" href="https://example.com/sns" target="_blank" rel="noopener noreferrer">活動報告（SNS）へ移動</a>
-            <a class="btn btn-secondary" href="https://drive.google.com/example-report-2025" target="_blank" rel="noopener noreferrer">事業報告（Googleドライブ）へ移動</a>
-            <a class="btn btn-secondary" href="https://drive.google.com/example-documents" target="_blank" rel="noopener noreferrer">情報公開資料（Googleドライブ）へ移動</a>
-            <a class="btn btn-secondary" href="https://forms.gle/example-contact-form" target="_blank" rel="noopener noreferrer">お問い合わせ（Googleフォーム）へ移動</a>
+    <section id="activities" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Activities</span>
+          <h2>活動</h2>
+          <p class="section-intro">
+            地域の中で、人が自然につながるきっかけを少しずつ育てています。
+          </p>
+        </div>
+
+        <div class="activity-grid">
+          <article class="card">
+            <span class="card-meta">01</span>
+            <h3>場づくり</h3>
+            <p>
+              人が安心して集まり、過ごし、関われる場を育てます。
+              会うこと自体が負担にならない、やわらかい空気感を大切にしています。
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-meta">02</span>
+            <h3>地域交流</h3>
+            <p>
+              子どもも大人も、立場の違う人たちが
+              同じ時間や空間をゆるやかに共有できる機会をつくります。
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-meta">03</span>
+            <h3>学びの機会</h3>
+            <p>
+              講演会や勉強会などを通して、
+              地域の中で学び合える場を広げていきます。
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-meta">04</span>
+            <h3>発信</h3>
+            <p>
+              日々の活動や考えていることを発信しながら、
+              新しいつながりや関わりの入口をつくっていきます。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sns" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">SNS</span>
+          <h2>最新の活動はSNSで。</h2>
+          <p class="section-intro">
+            このサイトでは世界観や考え方を伝え、日々の発信はSNSに集約する構成にしています。
+          </p>
+        </div>
+
+        <div class="sns-wrap">
+          <div class="sns-grid">
+            <article class="card sns-card">
+              <div class="sns-meta">Instagram / ダミー</div>
+              <h3>日常の空気感や、場の雰囲気を届ける</h3>
+              <p>
+                写真や短い言葉で、活動の温度感や居心地のよさが伝わる発信を想定しています。
+              </p>
+              <a class="sns-link" href="https://example.com/instagram" target="_blank" rel="noopener noreferrer">
+                Instagramを見る →
+              </a>
+            </article>
+
+            <article class="card sns-card">
+              <div class="sns-meta">note / ダミー</div>
+              <h3>考えていることを、もう少し丁寧に書く</h3>
+              <p>
+                活動の背景や、地域への思い、
+                日々の実践から見えてきたことなどを文章で伝える想定です。
+              </p>
+              <a class="sns-link" href="https://example.com/note" target="_blank" rel="noopener noreferrer">
+                noteを見る →
+              </a>
+            </article>
+
+            <article class="card sns-card">
+              <div class="sns-meta">X / ダミー</div>
+              <h3>お知らせや更新情報のハブとして使う</h3>
+              <p>
+                イベント案内や新しい発信の告知など、
+                いちばん気軽に見てもらえる導線として運用します。
+              </p>
+              <a class="sns-link" href="https://example.com/x" target="_blank" rel="noopener noreferrer">
+                Xを見る →
+              </a>
+            </article>
+          </div>
+
+          <aside class="sns-aside panel">
+            <h3>このサイトの役割</h3>
+            <p>
+              固定の報告記事を増やすのではなく、
+              サイトは「考え方と入口」を伝える場所にし、
+              更新性の高い情報はSNSへ流します。
+            </p>
+            <ul class="sns-list">
+              <li>雰囲気を見せる → Instagram</li>
+              <li>考えを深く伝える → note</li>
+              <li>更新導線にする → X</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>関わってみたい、<br>話をしてみたいと思ったら。</h2>
+          <p>
+            活動への参加、講演のご依頼、ご相談などは
+            お問い合わせフォームからご連絡ください。
+            内容を確認のうえ、順次ご返信します。
+          </p>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://forms.gle/example-contact-form" target="_blank" rel="noopener noreferrer">
+              お問い合わせフォーム
+            </a>
+            <a class="btn btn-secondary" href="https://example.com/sns" target="_blank" rel="noopener noreferrer">
+              SNSを見る
+            </a>
+          </div>
+
+          <div class="contact-note">
+            フォームURL、SNSリンクは実際のものに差し替えてご利用ください。
           </div>
         </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="container">
-          <h2>お問い合わせ</h2>
-          <p>相談・参加・講演依頼はGoogleフォームをご利用ください（ダミーリンク）。</p>
-          <a class="btn" href="https://forms.gle/example-contact-form" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a>
-          <p class="contact-meta">※メールアドレス等の固定連絡先は掲載せず、フォームに一本化しています。</p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <small>&copy; 2026 NPO法人くりあー</small>
-        <a href="#top">ページ上部へ戻る</a>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script>
-      const menuButton = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('#site-nav');
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>&copy; 2026 NPO法人くりあー</small>
+      <a href="#top">ページ上部へ戻る</a>
+    </div>
+  </footer>
 
-      if (menuButton && nav) {
-        menuButton.addEventListener('click', () => {
-          const isOpen = nav.classList.toggle('open');
-          menuButton.setAttribute('aria-expanded', String(isOpen));
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#site-nav");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
         });
-
-        nav.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            nav.classList.remove('open');
-            menuButton.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    </script>
-  </body>
+      });
+    }
+  </script>
+</body>
 </html>
