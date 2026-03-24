@@ -1,9 +1,4 @@
-diff --git a/assets/style.css b/assets/style.css
-index e786d9c65609896c5dcf8304dad6e56b16afb263..267844ccf8ace1ec3bece84d532fa99e53092ba7 100644
---- a/assets/style.css
-+++ b/assets/style.css
-@@ -29,50 +29,55 @@ a {
-   color: inherit;
+  color: inherit;
  }
  
  .skip-link {
