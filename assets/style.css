@@ -1,5 +1,5 @@
 diff --git a/assets/style.css b/assets/style.css
-index e786d9c65609896c5dcf8304dad6e56b16afb263..913620ec74d97357751dd52c34bd228692d7bcd5 100644
+index e786d9c65609896c5dcf8304dad6e56b16afb263..267844ccf8ace1ec3bece84d532fa99e53092ba7 100644
 --- a/assets/style.css
 +++ b/assets/style.css
 @@ -29,50 +29,55 @@ a {
@@ -86,6 +86,13 @@ index e786d9c65609896c5dcf8304dad6e56b16afb263..913620ec74d97357751dd52c34bd2286
  
 +h3 {
 +  line-height: 1.4;
++  margin: 0 0 0.6rem;
++}
++
++h4 {
++  margin: 0 0 0.3rem;
++  color: var(--primary-dark);
++  font-size: 1rem;
 +}
 +
  .lead {
@@ -134,15 +141,6 @@ index e786d9c65609896c5dcf8304dad6e56b16afb263..913620ec74d97357751dd52c34bd2286
    grid-template-columns: repeat(2, minmax(0, 1fr));
  }
  
-+.stack-grid {
-+  display: grid;
-+  gap: 1rem;
-+}
-+
-+.program-stack {
-+  grid-template-columns: repeat(2, minmax(0, 1fr));
-+}
-+
  .card {
    border: 1px solid var(--border);
    background: #fff;
@@ -150,21 +148,20 @@ index e786d9c65609896c5dcf8304dad6e56b16afb263..913620ec74d97357751dd52c34bd2286
    padding: 1.2rem;
  }
  
- .link-card {
-   text-decoration: none;
- }
- 
- .link-card:hover,
+-.link-card {
+-  text-decoration: none;
+-}
+-
+-.link-card:hover,
 -.link-card:focus-visible {
-+.link-card:focus-visible,
 +.card:hover {
    border-color: #bdd0eb;
-   background: #f8fbff;
- }
- 
- .card h3 {
-   margin-top: 0;
-   margin-bottom: 0.6rem;
+-  background: #f8fbff;
+-}
+-
+-.card h3 {
+-  margin-top: 0;
+-  margin-bottom: 0.6rem;
  }
  
  .two-col {
@@ -195,14 +192,35 @@ index e786d9c65609896c5dcf8304dad6e56b16afb263..913620ec74d97357751dd52c34bd2286
    margin: 0;
  }
  
- .panel-note,
+-.panel-note,
  .note,
  .contact-meta {
    color: var(--muted);
    font-size: 0.95rem;
  }
  
-+.inline-list,
++.programs-list {
++  display: grid;
++  gap: 1rem;
++}
++
++.program-meta-grid {
++  display: grid;
++  gap: 0.85rem;
++  grid-template-columns: repeat(2, minmax(0, 1fr));
++}
++
++.program-meta-grid p {
++  margin: 0;
++}
++
++.program-future {
++  margin: 0.9rem 0 0;
++  padding-top: 0.8rem;
++  border-top: 1px solid var(--border);
++  color: var(--muted);
++}
++
  .news-list,
  .document-list {
    list-style: none;
@@ -210,12 +228,6 @@ index e786d9c65609896c5dcf8304dad6e56b16afb263..913620ec74d97357751dd52c34bd2286
    padding: 0;
  }
  
-+.inline-list {
-+  display: grid;
-+  gap: 0.4rem;
-+  margin-top: 0.85rem;
-+}
-+
  .news-list li {
    border-bottom: 1px solid var(--border);
    padding: 0.85rem 0;
@@ -276,7 +288,7 @@ index e786d9c65609896c5dcf8304dad6e56b16afb263..913620ec74d97357751dd52c34bd2286
    .two-col,
 -  .card-grid {
 +  .card-grid,
-+  .program-stack {
++  .program-meta-grid {
      grid-template-columns: 1fr;
    }
  }
