@@ -142,7 +142,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
+      grid-template-columns: 1fr;
       gap: 32px;
       align-items: center;
     }
@@ -217,60 +217,6 @@
       font-size: 0.88rem;
     }
 
-    .hero-message h2 {
-      margin: 0 0 14px;
-      font-size: 1.45rem;
-      line-height: 1.3;
-    }
-
-    .hero-message p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .hero-submessage {
-      margin-top: 26px;
-    }
-
-    .hero-submessage strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .hero-submessage p {
-      margin: 0;
-      font-size: 1.08rem;
-      line-height: 1.7;
-    }
-
-    .hero-values {
-      margin-top: 30px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .hero-value span {
-      display: inline-block;
-      margin-bottom: 6px;
-      color: var(--accent);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .hero-value p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.6;
-    }
-
     .section {
       padding: 56px 0;
     }
@@ -311,9 +257,6 @@
     }
 
     .about-panel {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 24px;
       padding: 36px;
     }
 
@@ -324,29 +267,6 @@
 
     .about-copy p:last-child {
       margin-bottom: 0;
-    }
-
-    .about-side {
-      display: grid;
-      gap: 14px;
-    }
-
-    .mini-card {
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(34,32,29,0.06);
-    }
-
-    .mini-card strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.92rem;
-    }
-
-    .mini-card span {
-      color: var(--muted);
-      font-size: 0.88rem;
     }
 
     .concept-grid,
@@ -529,8 +449,6 @@
     }
 
     @media (max-width: 1080px) {
-      .hero-grid,
-      .about-panel,
       .sns-wrap {
         grid-template-columns: 1fr;
       }
@@ -655,40 +573,6 @@
             </p>
           </div>
 
-          <div class="hero-message">
-            <h2>特別な場所ではなく、<br>自然に立ち寄れる場所を。</h2>
-            <p>
-              誰かのためだけの閉じた場ではなく、
-              それぞれのペースで関われる、
-              開かれた地域の空気を育てていきたいと考えています。
-            </p>
-
-            <div class="hero-submessage">
-              <strong>Our message</strong>
-              <p>
-                がんばりすぎなくても、説明しすぎなくても、
-                そのままでいられる時間があること。
-                私たちは、そんな場を大切にしています。
-              </p>
-            </div>
-
-            <div class="hero-values">
-              <div class="hero-value">
-                <span>Connection</span>
-                <p>人と人が、無理なくつながる</p>
-              </div>
-
-              <div class="hero-value">
-                <span>Place</span>
-                <p>ふらっと立ち寄れる居場所をつくる</p>
-              </div>
-
-              <div class="hero-value">
-                <span>Community</span>
-                <p>地域のあたたかさを育てる</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -726,20 +610,6 @@
             </p>
           </div>
 
-          <div class="about-side">
-            <div class="mini-card">
-              <strong>拠点</strong>
-              <span>岡山県赤磐市</span>
-            </div>
-            <div class="mini-card">
-              <strong>キーワード</strong>
-              <span>居場所 / 交流 / 学び / 地域</span>
-            </div>
-            <div class="mini-card">
-              <strong>スタンス</strong>
-              <span>無理のない関わりと、開かれた場づくり</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -885,7 +755,7 @@
             <h3>このサイトの役割</h3>
             <p>
               固定の報告記事を増やすのではなく、
-              サイトは「考え方と入口」を伝る場所にし、
+              サイトは「考え方と入口」を伝える場所にし、
               更新性の高い情報はSNSへ流します。
             </p>
             <ul class="sns-list">
